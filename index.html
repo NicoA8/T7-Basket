@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Minge</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .field {
+        height: 80vh;
+        width: 100vw;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+      }
+      .shadow {
+        height: 2rem;
+        width: 8rem;
+        border-radius: 50%;
+        position: fixed;
+        inset-block-start: 87vh;
+        z-index: -1;
+        background-color: #929090;
+        border: 0.2rem solid #929090;
+        box-shadow: 0rem 0rem 1rem 1.5rem #929090;
+        animation: a-shadow 1.8s ease-in 6 alternate;
+      }
+      @keyframes a-shadow {
+        20% {
+          transform: scale(100%);
+        }
+        30% {
+          transform: scale(90%);
+        }
+        50% {
+          transform: scale(80%);
+        }
+        75% {
+          transform: scale(70%);
+        }
+        100% {
+          transform: scale(50%);
+        }
+      }
+      .ball {
+        background-image: radial-gradient(#ff4500 50%, #000);
+        border: 0.3rem solid black;
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        animation: a-bounce 1.8s ease-in 6 alternate;
+      }
+      @keyframes a-bounce {
+        20% {
+          width: 10rem;
+          height: 10rem;
+        }
+        30% {
+          width: 10rem;
+          height: 10.5rem;
+        }
+        50% {
+          width: 10rem;
+          height: 11rem;
+        }
+        75% {
+          width: 10rem;
+          height: 12rem;
+        }
+        100% {
+          width: 10rem;
+          height: 7rem;
+          transform: translateY(70vh);
+        }
+      }
+      .top {
+        grid-row: 1/5;
+        grid-column: 1/3;
+        border-inline-end: 0.4rem solid black;
+      }
+      .cl {
+        border-radius: 50%;
+        border: 0.4rem solid black;
+        position: relative;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-60%, -50%);
+        grid-column: 1/2;
+        grid-row: 2/4;
+      }
+      .bottom {
+        grid-column: 1/5;
+        grid-row: 3/5;
+        border-block-start: 0.4rem solid black;
+      }
+      .cr {
+        position: relative;
+        border: 0.4rem solid black;
+        border-radius: 50%;
+
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-40%, -50%);
+        grid-column: 1/2;
+        grid-row: 2/4;
+        grid-column: 4/5;
+        grid-row: 2/4;
+      }
+    </style>
+  </head>
+  <body class="all">
+    <main class="field">
+      <div class="ball">
+        <div class="top"></div>
+        <div class="cl"></div>
+        <div class="bottom"></div>
+        <div class="cr"></div>
+      </div>
+      <div class="shadow"></div>
+    </main>
+  </body>
+</html>
